@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using UnityEngine;
+
+
+
+class ArrayExample2 : MonoBehaviour
+{
+    void Start()
+    {
+        //select game objects that you tagged in unity with "Cube"
+        GameObject[] cubeArray = GameObject.FindGameObjectsWithTag("Cube");
+        for (int i = 0; i < cubeArray.Length; i++)
+        {
+            //change color of selected components to red
+            cubeArray[i].GetComponent<Renderer>().material.color = color.red;
+        }
+
+        void Update()
+            {
+            //if spacebar is pressed
+            if (input.GetKeyDown(KeyCode.Space))
+            {
+                //select game objects that you tagged in unity with "Cube"
+                GameObject[] cubeArray = GameObject.FindGameObjectsWithTag("Cube");
+                for (int i = 0; i < cubeArray.Length; i++)
+                {
+                    //change color of selected components to red
+                    cubeArray[i].GetComponent<Renderer>().material.color = color.red;
+                }
+            }
+        }
+    }
+}
